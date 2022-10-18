@@ -5,6 +5,13 @@ class KonyvModel {
         console.log("KonyvModel");
     }
 
+    adaModosit(adat){
+        console.log(adat);
+    }
+    adaTorol(adat){
+        console.log(adat);
+    }
+
     adatBe(vegpont, myCallBack) {
         fetch(vegpont, {
             method: 'GET',
