@@ -1,19 +1,22 @@
-class KonyvModel {
-    #konyvekTomb = [];
+class KosarModel {
+    #kosarTomb = [];
 
     constructor() {
-        console.log("KonyvModel");
-    }
-
-    adaModosit(adat){
-        console.log(adat,"modell");
-    }
-    adaTorol(adat){
-        console.log(adat);
+        console.log("KosarModel");
     }
 
     adahelp(adat){
-        console.log(adat);
+        //console.log(adat,"KosarModel");
+        this.#kosarTomb.push(adat);
+        console.log(this.#kosarTomb,"watafak");
+    }
+    
+
+    kosarba(elem){
+    }
+
+    getkosarTomb(){
+
     }
 
     adatBe(vegpont, myCallBack) {
@@ -26,9 +29,9 @@ class KonyvModel {
             .then((response) => response.json())
             .then((data) => {
                 console.log('Success:', data);
-                this.#konyvekTomb = data.konyv;
-                console.log(this.#konyvekTomb);
-                myCallBack(this.#konyvekTomb);
+                this.#kosarTomb = data.konyv;
+                console.log(this.#kosarTomb);
+                myCallBack(this.#kosarTomb);
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -36,4 +39,4 @@ class KonyvModel {
     }
 }
 
-export default KonyvModel;
+export default KosarModel;

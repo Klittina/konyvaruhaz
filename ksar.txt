@@ -1,0 +1,22 @@
+Publikus könyv felületen rákattintunk a kosárba gombra konyvPublicView---> 
+---> konyvPublicView - kattintasTrigger generál egy új eseményt (this.#elem)
+--->konyvController---> feliratkozott erre az eseményre 
+            és megkapja a kiválasztott könyv adatait
+--->meghívja a kosarModell metódusát
+
+-->Kosár menüpontra kattintva megjelenítjük a kosár tartalmát   
+        (végigmegy a kosarTomb-ön és megjeleníti az adatait - táblázatban/divekben)
+        kosarController --->ha a menüpontra kattintunk
+            akkor meghívja a kosarModell getkosarTomb-öt,majd
+            példányosítja az innen kapott tömbbel a kosarView osztályt
+
+kosarModell osztály
+    kosarTomb = []
+    getkosarTomb - visszaadja a kosarTomb tartalmát
+    kosarba(elem) - metódus, beleteszi a paraméterként kapott elemet
+
+kosarView osztály   
+    feladata, hogy a kosarTomb adatait megjelenítse
+
+kosarController == ez egyenlőre lehet a könyvController is
+    kosarModell és a kosarView közötti kapcsolatot biztosítja

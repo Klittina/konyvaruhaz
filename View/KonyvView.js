@@ -3,8 +3,6 @@ class KonyvView {
     #elem;
 
     constructor(elem, szuloElem) {
-        // console.log("KonyvView");
-        console.log(elem);
         this.#elem = elem;
         //egy sort megkell jeleníteni
         szuloElem.append(`<tr>
@@ -20,7 +18,6 @@ class KonyvView {
         //gombok eseménykezelői
 
         this.sorElem=szuloElem.children("tr:last-child");
-        console.log(this.sorElem);
         this.modositElem=$(`#mod${elem.id}`);
         this.torolElem=$(`#del${elem.id}`);
 
@@ -38,7 +35,7 @@ class KonyvView {
 
     kattintasTrigger(esemenynev){
         console.log("modosit a triggerbe",esemenynev);
-        const esemeny=new CustomEvent(esemenynev,{detail:this.#elem.id});
+        const esemeny=new CustomEvent(esemenynev,{detail:this.#elem});
         window.dispatchEvent(esemeny);
     }
 
